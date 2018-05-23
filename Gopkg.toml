@@ -24,6 +24,8 @@
 #   go-tests = true
 #   unused-packages = true
 
+[metadata.heroku]
+  root-package = "github.com/bonitech/base_gin"
 
 [prune]
   go-tests = true

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/bonitech/base_gin/injection"
 	"github.com/gin-gonic/gin"
@@ -10,6 +11,12 @@ import (
 )
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "8080"
+	}
+
 	r := gin.Default()
 	r.LoadHTMLGlob("templates/*")
 
@@ -45,5 +52,5 @@ func main() {
 		m.HandleRequest(c.Writer, c.Request)
 	})
 
-	r.Run("0.0.0.0:8080") // listen and serve on 0.0.0.0:8080
+	r.Run(":" + port) // listen and serve on 0.0.0.0:8080
 }

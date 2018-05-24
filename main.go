@@ -35,7 +35,7 @@ func main() {
 		m.Broadcast(msg)
 	})
 
-	r.GET("/", func(c *gin.Context) {
+	r.GET("/chat", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", gin.H{})
 	})
 	r.GET("/hey/:mode", func(c *gin.Context) {

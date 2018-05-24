@@ -36,7 +36,7 @@ func main() {
 	})
 
 	r.GET("/chat", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", gin.H{})
+		c.HTML(http.StatusOK, "chat.html", gin.H{})
 	})
 	r.GET("/hey/:mode", func(c *gin.Context) {
 		mode := c.Param("mode")
